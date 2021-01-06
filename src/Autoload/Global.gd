@@ -80,6 +80,7 @@ var mirror_view := false
 var draw_grid := false
 var show_rulers := true
 var show_guides := true
+var tilesheet_mode := false
 var show_animation_timeline := true
 
 # Onion skinning options
@@ -120,6 +121,7 @@ var zoom_level_label : Label
 var recent_projects_submenu : PopupMenu
 var tile_mode_submenu : PopupMenu
 
+var tilesheet_panel : Panel
 var new_image_dialog : ConfirmationDialog
 var open_sprites_dialog : FileDialog
 var save_sprites_dialog : FileDialog
@@ -246,6 +248,7 @@ func _ready() -> void:
 	patterns_popup = find_node_by_name(root, "PatternsPopup")
 
 	animation_timeline = find_node_by_name(root, "AnimationTimeline")
+	tilesheet_panel = find_node_by_name(root, "TilesheetPanel")
 	frame_properties = find_node_by_name(root, "FrameProperties")
 
 	layers_container = find_node_by_name(animation_timeline, "LayersContainer")

@@ -81,6 +81,7 @@ func setup_view_menu() -> void:
 		"Show Guides" : InputMap.get_action_list("show_guides")[0].get_scancode_with_modifiers(),
 		"Show Animation Timeline" : 0,
 		"Zen Mode" : InputMap.get_action_list("zen_mode")[0].get_scancode_with_modifiers(),
+		"Tilesheet Mode" : InputMap.get_action_list("tilesheet_mode")[0].get_scancode_with_modifiers(),
 		"Fullscreen Mode" : InputMap.get_action_list("toggle_fullscreen")[0].get_scancode_with_modifiers(),
 		}
 	view_menu = Global.view_menu.get_popup()
@@ -266,7 +267,9 @@ func view_menu_id_pressed(id : int) -> void:
 			toggle_show_anim_timeline()
 		6: # Zen mode
 			toggle_zen_mode()
-		7: # Fullscreen mode
+		7: # Tilesheet mode
+			toggle_tilesheet_mode()
+		8: # Fullscreen mode
 			toggle_fullscreen()
 	Global.canvas.update()
 
@@ -332,9 +335,17 @@ func toggle_zen_mode() -> void:
 	view_menu.set_item_checked(6, zen_mode)
 
 
+func toggle_tilesheet_mode() -> void:
+	Global.tilesheet_mode = !Global.tilesheet_mode
+	if Global.show_animation_timeline:
+		Global.animation_timeline.visible = !Global.tilesheet_mode
+	Global.tilesheet_panel.visible = Global.tilesheet_mode
+	view_menu.set_item_checked(7, Global.tilesheet_mode)
+
+
 func toggle_fullscreen() -> void:
 	OS.window_fullscreen = !OS.window_fullscreen
-	view_menu.set_item_checked(7, OS.window_fullscreen)
+	view_menu.set_item_checked(8, OS.window_fullscreen)
 
 
 func image_menu_id_pressed(id : int) -> void:
