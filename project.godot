@@ -64,12 +64,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/UI/Timeline/LayerButton.gd"
 }, {
-"base": "Resource",
+"base": "Reference",
 "class": "Palette",
 "language": "GDScript",
 "path": "res://src/Palette/Palette.gd"
 }, {
-"base": "Resource",
+"base": "Reference",
 "class": "PaletteColor",
 "language": "GDScript",
 "path": "res://src/Palette/PaletteColor.gd"
@@ -150,9 +150,9 @@ boot_splash/bg_color=Color( 0.145098, 0.145098, 0.164706, 1 )
 config/icon="res://assets/graphics/icons/icon.png"
 config/macos_native_icon="res://assets/graphics/icons/icon.icns"
 config/windows_native_icon="res://assets/graphics/icons/icon.ico"
+config/Version="v0.10.1-dev"
 config/custom_user_dir_name.X11="pixelorama"
 run/low_processor_mode.Android=false
-config/Version="v0.10.1-dev"
 
 [audio]
 
@@ -167,6 +167,7 @@ DrawingAlgos="*res://src/Autoload/DrawingAlgos.gd"
 Tools="*res://src/Autoload/Tools.gd"
 Html5FileExchange="*res://src/Autoload/HTML5FileExchange.gd"
 Export="*res://src/Autoload/Export.gd"
+Gifdot="*res://addons/gifdot/gifdot.gdns"
 Palettes="*res://src/Autoload/Palettes.gd"
 
 [debug]
@@ -187,7 +188,7 @@ window/per_pixel_transparency/enabled.Android=false
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/dockable_container/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/gifdot/plugin.cfg" )
 
 [gui]
 
@@ -297,12 +298,12 @@ paste={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":86,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-left_shading_tool={
+left_lightdark_tool={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":85,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-right_shading_tool={
+right_lightdark_tool={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":true,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":85,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
@@ -465,6 +466,16 @@ open_docs={
 cut={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":88,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left_shading_tool={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":85,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+right_shading_tool={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":true,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":85,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 mirror_view={

@@ -249,7 +249,7 @@ func export_gif(args: Dictionary) -> void:
 	args["export_dialog"].toggle_export_progress_popup(true)
 
 	# Export and save gif
-	var exporter = GIFExporter.new(
+	var exporter = Gifdot.get_encoder(
 		processed_images[0].get_width(), processed_images[0].get_height()
 	)
 	match direction:
@@ -294,14 +294,14 @@ func export_gif(args: Dictionary) -> void:
 	else:
 		var file: File = File.new()
 		file.open(args["export_paths"][0], File.WRITE)
-		file.store_buffer(exporter.export_file_data())
+		file.store_buffer(exporter.get_file_data())
 		file.close()
 	args["export_dialog"].toggle_export_progress_popup(false)
 	Global.notification_label("File(s) exported")
 
 
 func write_frame_to_gif(image: Image, wait_time: float, exporter: Reference, dialog: Node) -> void:
-	exporter.add_frame(image, wait_time, MedianCutQuantization)
+	exporter.add_frame(image.get_data(), int(wait_time*100))
 	increase_export_progress(dialog)
 
 
