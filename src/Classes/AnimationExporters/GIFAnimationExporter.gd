@@ -21,9 +21,9 @@ func export_animation(
 ) -> PoolByteArray:
 	var first_frame: AImgIOFrame = frames[0]
 	var first_img := first_frame.content
-	var exporter = GIFExporter.new(first_img.get_width(), first_img.get_height())
+	var exporter = Godout.animation.gif.get_encoder(first_img.get_width(), first_img.get_height())
 	for v in frames:
 		var frame: AImgIOFrame = v
-		exporter.add_frame(frame.content, frame.duration, MedianCutQuantization)
+		exporter.add_frame(frame.content.get_data(), int(frame.duration/100))
 		progress_report_obj.callv(progress_report_method, progress_report_args)
-	return exporter.export_file_data()
+	return exporter.get_file_data()

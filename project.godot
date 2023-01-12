@@ -290,6 +290,7 @@ Export="*res://src/Autoload/Export.gd"
 Palettes="*res://src/Autoload/Palettes.gd"
 Keychain="*res://addons/keychain/Keychain.gd"
 ExtensionsApi="*res://src/Autoload/ExtensionsAPI.gd"
+Godout="*res://addons/godout/godout.gd"
 
 [debug]
 
@@ -310,7 +311,7 @@ window/per_pixel_transparency/enabled.Android=false
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/aimg_io/plugin.cfg", "res://addons/dockable_container/plugin.cfg", "res://addons/keychain/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/aimg_io/plugin.cfg", "res://addons/dockable_container/plugin.cfg", "res://addons/godout/plugin.cfg", "res://addons/keychain/plugin.cfg" )
 
 [importer_defaults]
 
